@@ -1,223 +1,294 @@
-🧠 Brain Tumor Detector & Classifier
+<div align="center">
 
-A Deep Learning–powered web application for classifying brain tumors from MRI scans.
+# 🧠 Brain Tumor Detector & Classifier
 
-⚠️ Medical Disclaimer
+### Deep Learning-Powered MRI Scan Analysis
 
-This project is intended strictly for educational and research purposes.
-It is NOT a medical diagnostic tool and must not be used for clinical or professional healthcare decisions.
-Always consult a qualified medical practitioner for real medical concerns.
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0+-orange.svg)](https://www.tensorflow.org/)
+[![Flask](https://img.shields.io/badge/Flask-2.0+-green.svg)](https://flask.palletsprojects.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-🌟 Overview
+*An intelligent web application that classifies brain tumors from MRI scans using transfer learning and VGG16 architecture*
 
-The Brain Tumor Detector & Classifier is a web-based tool that uses a fine-tuned deep learning model (VGG16-based CNN) to classify MRI brain scans into the following categories:
+[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Usage](#-usage) • [Model](#-model-architecture) • [Contributing](#-contributing)
 
-Meningioma Tumor
+</div>
 
-Glioma Tumor
+---
 
-Pituitary Tumor
+## ⚠️ Medical Disclaimer
 
-No Tumor Detected
+> **IMPORTANT:** This project is intended **strictly for educational and research purposes only.**  
+> It is **NOT a medical diagnostic tool** and must **never** be used for clinical or professional healthcare decisions.  
+> Always consult a qualified medical practitioner for any medical concerns.
 
-The web interface is built using Flask, enabling users to upload MRI images and receive predictions with confidence scores.
+---
 
-✨ Features
-✔ Image Classification
+## 🌟 Overview
 
-Upload an MRI image and get a tumor category prediction.
+The **Brain Tumor Detector & Classifier** leverages the power of deep learning to assist in the preliminary classification of brain MRI scans. Using a fine-tuned VGG16 convolutional neural network, the system can identify and classify four distinct categories:
 
-✔ Multi-Class Prediction
+- 🔴 **Glioma Tumor**
+- 🟣 **Meningioma Tumor**
+- 🟡 **Pituitary Tumor**
+- 🟢 **No Tumor Detected**
 
-Classifies images into 4 classes:
+Built with Flask and TensorFlow, this application provides an intuitive web interface for researchers and students to explore medical image classification.
 
-Meningioma
+---
 
-Glioma
+## ✨ Features
 
-Pituitary
+| Feature | Description |
+|---------|-------------|
+| 🎯 **Multi-Class Classification** | Accurately classifies MRI scans into 4 distinct categories |
+| 📊 **Confidence Scoring** | Displays prediction confidence as a percentage |
+| 📋 **Medical Summaries** | Provides educational information about each tumor type |
+| 👨‍⚕️ **Specialist Recommendations** | Suggests appropriate medical specialists for consultation |
+| 🎨 **Clean UI/UX** | Modern, responsive web interface for easy interaction |
+| ⚡ **Fast Predictions** | Quick inference time for real-time classification |
 
-Healthy (No Tumor)
+---
 
-✔ Confidence Score
+## 🎬 Demo
 
-Displays the model’s confidence as a percentage.
+### Web Interface
+```
+1. Upload MRI Image → 2. Classify → 3. View Results
+```
 
-✔ Medical Summary
+**Sample Output:**
+- **Prediction:** Glioma Tumor
+- **Confidence:** 94.7%
+- **Recommendation:** Consult a Neurologist or Neurosurgeon
 
-Provides short educational info and suggests which medical specialist to consult (e.g., neurologist, neurosurgeon).
+---
 
-✔ Simple Web Interface
+## 🛠️ Tech Stack
 
-Clean UI built using HTML, CSS, and JavaScript.
+<div align="center">
 
-🛠️ Tech Stack
-Layer	Technology
-Backend	Python, Flask
-ML Framework	TensorFlow, Keras
-Image Processing	OpenCV, Pillow
-Frontend	HTML, CSS, JS
-Development	Jupyter Notebook
-🚀 Getting Started
-✅ Prerequisites
+| Layer | Technology |
+|:-----:|:----------:|
+| **Backend** | ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/-Flask-000000?style=flat&logo=flask&logoColor=white) |
+| **ML Framework** | ![TensorFlow](https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white) ![Keras](https://img.shields.io/badge/-Keras-D00000?style=flat&logo=keras&logoColor=white) |
+| **Image Processing** | ![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white) Pillow |
+| **Frontend** | ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) |
 
-Make sure you have the following installed:
+</div>
 
-Python 3.8+
+---
 
-pip
+## 🚀 Installation
 
-Git
+### Prerequisites
 
-(Optional) NVIDIA GPU + CUDA/cuDNN for faster training
+- Python 3.8 or higher
+- pip package manager
+- Git
+- (Optional) NVIDIA GPU with CUDA for faster training
 
-🔧 Installation Guide
-1️⃣ Clone the repository
-git clone https://github.com/Thanatos624/BrainTumorDetection
+### Step-by-Step Setup
+
+**1. Clone the Repository**
+```bash
+git clone https://github.com/Thanatos624/BrainTumorDetection.git
 cd BrainTumorDetection
+```
 
-2️⃣ Create and activate a virtual environment
-Windows
+**2. Create Virtual Environment**
+
+*Windows:*
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
-macOS / Linux
+*macOS/Linux:*
+```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
-3️⃣ Install dependencies
+**3. Install Dependencies**
+```bash
 pip install -r requirements.txt
+```
 
-4️⃣ Download the dataset
+**4. Download Dataset**
 
-Dataset: Brain Tumor MRI Dataset (Kaggle)
-Link: https://www.kaggle.com/datasets
+- Dataset: [Brain Tumor MRI Dataset on Kaggle](https://www.kaggle.com/datasets)
+- Extract and place in `training/dataset/` with the following structure:
 
-After downloading:
-
-Unzip the dataset.
-
-Copy the Training folder into the project:
-
-project_root/training/dataset/
-
-
-The folder structure should look like:
-
+```
 training/dataset/
- ├── glioma_tumor/
- ├── meningioma_tumor/
- ├── no_tumor/
- └── pituitary_tumor/
+├── glioma_tumor/
+├── meningioma_tumor/
+├── no_tumor/
+└── pituitary_tumor/
+```
 
-🧑‍💻 Training the Model (Optional)
+**5. Run the Application**
+```bash
+python app.py
+```
 
-A pre-trained model is already included at:
+Open your browser and navigate to: **http://127.0.0.1:5000/**
 
-model/brain_tumor_model.h5
+---
 
+## 📖 Usage
 
-If you want to retrain:
+1. **Upload MRI Image**  
+   Click "Choose an MRI Image" and select a `.jpg`, `.png`, or `.jpeg` file
 
+2. **Classify**  
+   Click the "Classify Tumor" button
+
+3. **View Results**  
+   - Predicted tumor type
+   - Confidence percentage
+   - Medical description
+   - Specialist recommendation
+
+---
+
+## 🧠 Model Architecture
+
+The classifier uses **Transfer Learning** with the VGG16 architecture:
+
+```
+Input Image (224x224x3)
+         ↓
+VGG16 Base (Frozen Layers)
+         ↓
+Custom Dense Layers
+         ↓
+Softmax Output (4 Classes)
+```
+
+### Training Process
+
+- **Base Model:** VGG16 (pre-trained on ImageNet)
+- **Technique:** Transfer learning with frozen early layers
+- **Custom Layers:** Added for tumor classification
+- **Optimizer:** Adam
+- **Loss Function:** Categorical Crossentropy
+
+### Model Performance
+
+The model achieves high accuracy on the validation set after fine-tuning. 
+
+> **Note:** A pre-trained model is included at `model/brain_tumor_model.h5`
+
+---
+
+## 🔄 Retraining the Model (Optional)
+
+To retrain the model with your own data:
+
+```bash
 python training/Brain_Tumor_Training.py
-
+```
 
 This will:
+- Load and preprocess the dataset
+- Fine-tune the VGG16 model
+- Save the trained model to `model/`
 
-Load & preprocess the dataset
+---
 
-Fine-tune VGG16
+## 📂 Project Structure
 
-Save the trained model in model/
-
-▶️ Running the Web Application
-
-From the project root:
-
-python app.py
-
-
-If Flask starts successfully, you'll see something like:
-
-Running on http://127.0.0.1:5000/
-
-
-Open your browser and navigate to:
-
-👉 http://127.0.0.1:5000/
-🧪 How to Use
-
-Click "Choose an MRI Image" on the home page.
-
-Select any .jpg, .png, or .jpeg MRI brain image.
-
-Click "Classify Tumor".
-
-View:
-
-Predicted tumor type
-
-Confidence percentage
-
-Short medical description
-
-Suggested doctor to consult
-
-📂 Project Structure
+```
 brain-tumor-detector/
-├── app.py
-├── requirements.txt
+│
+├── app.py                          # Flask application
+├── requirements.txt                # Python dependencies
+├── README.md                       # Project documentation
+│
 ├── model/
-│   └── brain_tumor_model.h5
+│   └── brain_tumor_model.h5       # Trained model
+│
 ├── static/
 │   ├── css/
-│   │   └── style.css
+│   │   └── style.css              # Styling
 │   └── js/
-│       └── script.js
+│       └── script.js              # Frontend logic
+│
 ├── templates/
-│   └── index.html
-├── training/
-│   ├── Brain_Tumor_Training.py
-│   └── dataset/
-│       ├── glioma_tumor/
-│       ├── meningioma_tumor/
-│       ├── no_tumor/
-│       └── pituitary_tumor/
-└── README.md
+│   └── index.html                 # Web interface
+│
+└── training/
+    ├── Brain_Tumor_Training.py    # Training script
+    └── dataset/                   # Training data
+        ├── glioma_tumor/
+        ├── meningioma_tumor/
+        ├── no_tumor/
+        └── pituitary_tumor/
+```
 
-🧠 Model Information
+---
 
-The classifier is a Convolutional Neural Network (CNN) built using TensorFlow/Keras.
-To improve accuracy, it uses Transfer Learning from the VGG16 model (pre-trained on ImageNet):
+## 🔮 Future Enhancements
 
-🔍 Steps used:
+- [ ] **Grad-CAM Visualization** - Visual explanations for model predictions
+- [ ] **PDF Report Generation** - Downloadable patient reports
+- [ ] **Multi-Modal Support** - Support for different MRI sequences (T1, T2, FLAIR)
+- [ ] **Model Ensemble** - Combine multiple models for improved accuracy
+- [ ] **REST API** - Enable programmatic access
+- [ ] **Batch Processing** - Analyze multiple images simultaneously
+- [ ] **Performance Metrics Dashboard** - Real-time model analytics
 
-Freeze early VGG16 layers
+---
 
-Add custom classification layers
+## 🤝 Contributing
 
-Train on MRI tumor dataset
+Contributions are welcome! Please follow these steps:
 
-Achieved high accuracy after fine-tuning
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-📌 Future Enhancements
+---
 
-Add Grad-CAM visual explanations
+## 📄 License
 
-Add full patient report generation (PDF export)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Introduce real-time webcam classification
+---
 
-Expand dataset with more MRI modalities
+## 📚 Citations
 
-🤝 Contributing
+If you use this project in your research, please cite:
 
-Contributions, pull requests, and suggestions are welcome!
+```bibtex
+@software{brain_tumor_detector,
+  author = {Thanatos624},
+  title = {Brain Tumor Detector & Classifier},
+  year = {2025},
+  url = {https://github.com/Thanatos624/BrainTumorDetection}
+}
+```
 
-📜 License
+---
 
-This project is licensed under the MIT License.
+## 💬 Contact & Support
 
-💬 Contact
+- **GitHub Issues:** [Report a bug or request a feature](https://github.com/Thanatos624/BrainTumorDetection/issues)
+- **Discussions:** [Join the conversation](https://github.com/Thanatos624/BrainTumorDetection/discussions)
 
-If you have questions or want collaboration — feel free to reach out or open an issue on GitHub.
+---
+
+<div align="center">
+
+### ⭐ If you find this project useful, please consider giving it a star!
+
+**Made with ❤️ for the ML and Healthcare community**
+
+[⬆ Back to Top](#-brain-tumor-detector--classifier)
+
+</div>
